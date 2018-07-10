@@ -60,18 +60,45 @@ public class ProjectController {
 	}
 	
 	
-	
 	@GetMapping("/towersList")
-	public String listTowers(Model theModel) {
+	public String listTowers(ModelMap theModel) {
 		
 		//get towers from the service
 		List<Tower> theTowers = towerService.getTowers();
+		List<Project> theProjects = projectService.getProjects();
 		
 		//add towers to the model
 		theModel.addAttribute("towers", theTowers);
+		theModel.addAttribute("projects", theProjects);
 		
-		return "tower-list";
-	}
+		return "tables";
+	}	
+	
+//		Original TowerZoom TowersList
+//	@GetMapping("/towersList")
+//	public String listTowers(Model theModel) {
+//		
+//		//get towers from the service
+//		List<Tower> theTowers = towerService.getTowers();
+//		
+//		//add towers to the model
+//		theModel.addAttribute("towers", theTowers);
+//		
+//		return "tables";
+//	}
+	
+	//Green Fascia TowersList
+//	@GetMapping("/towersList")
+//	public String listTowers(Model theModel) {
+//		
+//		//get towers from the service
+//		List<Tower> theTowers = towerService.getTowers();
+//		
+//		//add towers to the model
+//		theModel.addAttribute("towers", theTowers);
+//		
+//		return "tower-list";
+//	}
 	
 	
 	//auto update project pricing
@@ -85,25 +112,6 @@ public class ProjectController {
 		return "redirect:/main/projectsList";
 	}
 	
-//	//attempt to update pricing
-//	@GetMapping("/projectsList")
-//	public String listProjects(ModelMap theModel) {
-//		
-//		//get projects from the service
-//		List<Project> theProjects = projectService.getProjects();
-//		
-//		//newPricing = projectService.returnPricing();
-//		int theId = projectService.getProject(projectNumber);
-//		double newPricing =
-//			projectService.returnPricing(theId);
-//		
-//		
-//		//add projects to the model
-//		theModel.addAttribute("projects", theProjects);
-//		theModel.addAttribute("pricing", newPricing);
-//		
-//		return "project-list";
-//	}
 	
 	@GetMapping("/projectsList")
 	public String listProjects(Model theModel) {

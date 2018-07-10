@@ -174,19 +174,7 @@ public class ProjectServiceImpl implements ProjectService {
 				project.setPricing(0.00);
 				System.out.println("\n\nAT&T pricing not initialized!\n\n");
 			}			
-			
-			//basic pricing statement
-//			if (type.equalsIgnoreCase("MLA")) {
-//				
-//				project.setPricing(2250.00);
-//				projectDAO.saveProject(project);				
-//
-//							
-//			} else if (type.equalsIgnoreCase("Amendment")) {					
-//				project.setPricing(1000.00);
-//				projectDAO.saveProject(project);
-//
-//			}		
+					
 			
 		} catch (Exception e) {
 			e.printStackTrace();
